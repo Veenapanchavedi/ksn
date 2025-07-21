@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSN Advisory Services FZ LLC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #D4AF37;
+            --secondary: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--secondary);
+            color: #333;
+        }
+        
+        .gold-text {
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        .gold-text:hover {
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6), 0 0 30px rgba(212, 175, 55, 0.4);
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        .bounce-effect {
+            animation: bounce 1.5s ease infinite;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
+            50% { text-shadow: 0 0 20px rgba(212, 175, 55, 0.6), 0 0 30px rgba(212, 175, 55, 0.4); }
+            100% { text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
+        }
+        .glow-animate {
+            animation: glow 2.5s ease-in-out infinite;
+        }
+        
+        .gold-bg {
+            background-color: var(--primary);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                        url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/763c22b3-3805-4f95-91b4-478c7f8ce4a1.png') no-repeat center center;
+            background-size: cover;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #25D366;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        @media (max-width: 768px) {
+            .hero-content {
+                text-align: center;
+            }
+            
+            .nav-menu.mobile-open {
+                display: block;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                z-index: 100;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="ksn straight.png" alt="KSN Logo" class="h-10 mx-2">
+                <span class="text-xl font-bold whitespace-nowrap">Advisory Services FZ LLC</span>
+            </div>
+            <button class="mobile-menu-btn md:hidden text-gray-700" id="menuToggle">
+                <i class="fas fa-bars text-2xl" id="menuIcon"></i>
+            </button>
+            <nav class="nav-menu hidden md:flex">
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="nav-link text-gray-700 hover:text-amber-600 font-medium">Home</a></li>
+                    <li><a href="#about" class="nav-link text-gray-700 hover:text-amber-600 font-medium">About</a></li>
+                    <li><a href="#services" class="nav-link text-gray-700 hover:text-amber-600 font-medium">Services</a></li>
+                    <li><a href="#contact" class="nav-link text-gray-700 hover:text-amber-600 font-medium">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="hero-content flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fadeIn">
+                        <span class="inline-block transition-transform duration-500 hover:scale-105">Expert Consultancy in </span> 
+                        <span class="gold-text glow-animate inline-block transition-all duration-500">Natural and Engineering Sciences</span> 
+                        
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8">Providing expert advisory services to help your business grow and thrive in today's competitive market.</p>
+                    <button class="gold-bg hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 bounce-effect">
+                        Get Started
+                    </button>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/37d07a16-66ae-4012-a070-9b68bbb9b36b.png" alt="Professional financial advisors discussing business strategy in a modern office" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/73402829-b9d1-4a44-8086-71fcbf6f77fd.png" alt="Diverse team of financial professionals working together" class="rounded-lg shadow-xl">
+                </div>
+                <div class="lg:w-1/2 lg:pl-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About <span class="gold-text glow-animate">KSN Advisory</span></h2>
+                   
+                    <p class="text-gray-600 mb-6 text-base sm:text-lg">KSN Advisory Services FZ LLC is a premier financial advisory firm specializing in strategic business solutions. Our mission is to empower businesses by providing expert guidance and innovative solutions tailored to their unique needs.</p>
+                    <p class="text-gray-600 mb-6">With a team of highly qualified professionals, we leverage our extensive industry knowledge and experience to help clients navigate complex financial landscapes. We believe in building long-term relationships based on trust, integrity, and mutual success.</p>
+                    <p class="text-gray-600 mb-8">Our services encompass a wide range of areas, including financial consulting, project management, and strategic planning. We are committed to delivering exceptional value and results that drive growth and sustainability for our clients.</p>
+                    <p class="text-gray-600">At KSN Advisory, we understand that every business is unique. Therefore, we take the time to listen to our clients, understand their challenges, and develop customized strategies that align with their goals. Our approach is collaborative, ensuring that we work hand-in-hand with our clients to achieve their desired outcomes.</p>
+              
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our <span class="gold-text glow-animate">Services</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Consultancy, Studies and Researches in Natural and Engineering Sciences
+                    Our firm specializes in elaborating studies and experimental development researches across various scientific disciplines.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-500 hover:shadow-lg hover:-translate-y-2 hover:bounce-effect">
+                    <div class="gold-bg rounded-full inline-flex p-3 mb-4">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 hover:text-amber-600 transition-colors duration-300 transform hover:scale-105">Financial Consulting</h3>
+                    <p class="text-gray-600 mb-4">Expert analysis and strategic planning to optimize your financial performance.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 transition duration-500">
+                    <div class="gold-bg rounded-full inline-flex p-3 mb-4">
+                       <i class="fas fa-cogs text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Project Management Consultancy</h3>
+                    <p class="text-gray-600 mb-4">Providing expert guidance to ensure your projects are completed on time and within budget.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 transition duration-500">
+                    <div class="gold-bg rounded-full inline-flex p-3 mb-4">
+                        <i class="fas fa-globe text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Market Research</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive market analysis to identify opportunities and threats.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 transition duration-500">
+                    <div class="gold-bg rounded-full inline-flex p-3 mb-4">
+                       <i class="fas fa-building text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Constructional Projects Management</h3>
+                    <p class="text-gray-600 mb-4">Specialized management services for construction projects to ensure quality and efficiency.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 transition duration-500">
+                    <div class="gold-bg rounded-full inline-flex p-3 mb-4">
+                       <i class="fas fa-bullseye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Management Services</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive management solutions tailored to enhance your business operations.</p>
+                   
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 transition duration-500">
+                    <div class="gold-bg rounded-full inline-flex p-3 mb-4">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">HR Consulting</h3>
+                    <p class="text-gray-600 mb-4">Optimizing your human resources for maximum productivity and efficiency.</p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get in <span class="gold-text glow-animate">Touch</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We'd love to hear from you. Reach out to us for any inquiries or to schedule a consultation.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-10">
+                <!-- Contact Form -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-8">
+                        <h3 class="text-xl font-bold mb-6 gold-text">Send Us a Message</h3>
+                        <form id="contactForm" class="space-y-5">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg contact-input focus:border-amber-400">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg contact-input focus:border-amber-400">
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border rounded-lg contact-input focus:border-amber-400">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg contact-input focus:border-amber-400"></textarea>
+                            </div>
+                            
+                            <button type="button" onclick="this.classList.add('bounce-effect'); setTimeout(() => this.classList.remove('bounce-effect'), 1500); sendToWhatsApp()" class="gold-bg hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center gap-2">
+                                <i class="fab fa-whatsapp"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-8 h-full">
+                        <h3 class="text-xl font-bold mb-6 gold-text">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="gold-bg rounded-full p-2 mr-4 flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Address</h4>
+                                    <p class="text-gray-600">Dubai, United Arab Emirates</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="gold-bg rounded-full p-2 mr-4 flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Phone</h4>
+                                    <p class="text-gray-600">+971 566107169</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="gold-bg rounded-full p-2 mr-4 flex-shrink-0">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Email</h4>
+                                    <p class="text-gray-600">info@ksndubai.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="gold-bg rounded-full p-2 mr-4 flex-shrink-0">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Working Hours</h4>
+                                    <p class="text-gray-600">Monday - Friday: 9 AM - 6 PM</p>
+                                    <p class="text-gray-600">Saturday: 10 AM - 2 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <img src="logo.png" alt="KSN Advisory Services Logo" class="h-10 mb-4">
+                    <p class="text-gray-400 max-w-md">KSN Advisory Services FZ LLC provides comprehensive financial solutions to help your business grow and succeed in today's competitive market.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 gold-text hover:glow-animate">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 gold-text">Services</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Financial Consulting</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Project Management Consultancy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Market Research</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Constructional Project Management</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Management Services</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">HR Consulting</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 gold-text">Contact</h3>
+                        <ul class="space-y-2">
+                            <li class="text-gray-400">Dubai, UAE</li>
+                            <li class="text-gray-400">info@ksndubai.com</li>
+                            <li class="text-gray-400">+971 566107169</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 KSN Advisory Services FZ LLC. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full shadow-lg transition opacity-0 invisible duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        // Mobile Menu Toggle with icon switch
+        const menuToggle = document.getElementById('menuToggle');
+        const menuIcon = document.getElementById('menuIcon');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('mobile-open');
+            if (navMenu.classList.contains('mobile-open')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+                navMenu.style.display = 'flex';
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+                navMenu.style.display = 'none';
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                navMenu.classList.add('hidden');
+            });
+        });
+        
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // WhatsApp Message Function
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields before sending');
+                return;
+            }
+            
+            const whatsappMessage = `New Contact Inquiry:%0A%0AName: ${name}%0AEmail: ${email}%0ASubject: ${subject}%0AMessage: ${message}`;
+            const whatsappUrl = `https://wa.me/+971566107169?text=${whatsappMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
+
